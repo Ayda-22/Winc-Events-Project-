@@ -12,7 +12,6 @@ export const Navigation = () => {
   const toggleMobileMenu = () => setOpen(!open);
   const closeMobileMenu = () => setOpen(false);
 
-
   return (
     <nav className="header-nav">
       <div className="nav-contents">
@@ -55,16 +54,12 @@ export const Navigation = () => {
         </div>
         <div className="nav-hamburger-menu">
           {open ? (
-            <CgClose
-              color="white"
-              fontSize={32}
-              onClick={() => setOpen(!open)}
-            />
+            <CgClose color="white" fontSize={32} onClick={toggleMobileMenu} />
           ) : (
             <GiHamburgerMenu
               color="white"
               fontSize={32}
-              onClick={() => setOpen(!open)}
+              onClick={toggleMobileMenu}
             />
           )}
           {open && (
@@ -75,3 +70,4 @@ export const Navigation = () => {
     </nav>
   );
 };
+
