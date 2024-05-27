@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "../index.css";
 import { Image } from "@chakra-ui/react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import NavMobile from "./NavMobile";
 import { CgClose } from "react-icons/cg";
+import NavMobile from "./NavMobile";
+import "../index.css";
 
 export const Navigation = () => {
   const [open, setOpen] = useState(false);
-
-  const toggleMobileMenu = () => setOpen(!open);
   const closeMobileMenu = () => setOpen(false);
 
   return (
@@ -54,12 +52,16 @@ export const Navigation = () => {
         </div>
         <div className="nav-hamburger-menu">
           {open ? (
-            <CgClose color="white" fontSize={32} onClick={toggleMobileMenu} />
+            <CgClose
+              color="white"
+              fontSize={32}
+              onClick={() => setOpen(!open)}
+            />
           ) : (
             <GiHamburgerMenu
               color="white"
               fontSize={32}
-              onClick={toggleMobileMenu}
+              onClick={() => setOpen(!open)}
             />
           )}
           {open && (
