@@ -8,7 +8,10 @@ import { CgClose } from "react-icons/cg";
 
 export const Navigation = () => {
   const [open, setOpen] = useState(false);
+
+  const toggleMobileMenu = () => setOpen(!open);
   const closeMobileMenu = () => setOpen(false);
+
 
   return (
     <nav className="header-nav">
